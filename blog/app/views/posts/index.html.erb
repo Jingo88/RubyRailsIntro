@@ -1,0 +1,21 @@
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+ <h1>Welcome to my blog!</h1>
+  <% @posts.each do |post| %>
+  <h2><%= link_to post.title, post_path(post) %></h2>
+  <h3>by <%= post.author %></h3>
+  <%= post.content %>
+  <% end %>
+
+<br /><br />
+
+<%= link_to 'Create a new post!', new_post_path %>
+
+</body>
+</html>

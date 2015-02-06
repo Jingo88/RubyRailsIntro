@@ -1,0 +1,26 @@
+
+  <html lang="en">
+  <head>
+  	<meta charset="UTF-8">
+  	<title>Document</title>
+  </head>
+  <body>
+  	
+
+<h2> <%= @post.title %></h2>
+<h3> by <%= @post.author %></h3>
+<%= @post.content %>
+
+<br />
+<%= link_to 'back', posts_path %>
+
+<%= link_to 'edit', edit_post_path(@post) %>
+
+<br /><br />
+<%= link_to 'delete', @post, method: :delete %>
+
+  </body>
+  </html>  
+
+
+
