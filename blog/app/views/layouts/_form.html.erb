@@ -1,3 +1,7 @@
-<%= form_for(zone) do |f| %>
-<p>
-	<
+<%= form_for @post, url: {action: 'create'} do |f| %>
+<%= f.label :headline%>
+<%= f.text_field :headline%>
+<br>
+<%= f.submit%>
+<%end%>
+<%= link_to 'cancel', posts_path%>
