@@ -2,6 +2,7 @@
 class SecretController < ApplicationController
 
 	def show
+		# using bcrypt
 		@user = User.find_by(id: session[:user_id])
 
 		if @user
@@ -11,7 +12,7 @@ class SecretController < ApplicationController
 		end
 	end
 
-	# 	# This is for sessions
+	# 	# This is for the secret secret password thing
 	# 	valid_user = session[:valid_user]
 	# 	if valid_user
 	# 		render :show
