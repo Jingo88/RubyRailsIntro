@@ -1,7 +1,19 @@
+
 <%= form_for @post, url: {action: 'create'} do |f| %>
-<%= f.label :headline%>
-<%= f.text_field :headline%>
-<br>
-<%= f.submit%>
-<%end%>
-<%= link_to 'cancel', posts_path%>
+<%= f.label :headline %>
+<%= f.text_field :headline %>
+<br /><br />
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+<br /><br />
+
+<%= f.label :content %>
+<%= f.text_area :content %>
+<br /><br />
+
+<%= f.submit %>
+<% end %>
+
+
+<%= link_to 'cancel', posts_path %>
