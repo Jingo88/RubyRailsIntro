@@ -3,7 +3,7 @@
 ### Coming soon to a theater near you.
 
 
-### Pipeline Rails
+## Pipeline Rails
 
 #####The asset pipeline will take all the files and minimizes all of the files, and combines them to send only what is necessary. It compresses things by removing all the spaces and the like. you can use other processers too such as CoffeeScript or LESS/SASS. 
 
@@ -30,3 +30,49 @@
 //= require turbolinks
 //= require_tree .
 ```
+
+## Formatting and API items
+
+#### "protect_from_forgery with :exception" 
+
+* this goes inside a controller. If you try to hit an API route that will try to CRUD a record it will give you a message that you are not authenticated. The protect from forgery line allows you to bypass those situations.
+
+#### Rails formatting
+In your controller you can put various formats inside the method. Example:
+``` 
+def index
+@pets = Pet.all
+respond_to do |format|
+
+This will be found in localhost:3000/pets
+format.html { render :index}
+
+This will be found in localhost:3000/pets.json
+format.json { render json: @pets}
+```
+
+#### Rendering
+You are able to render various error pages as well. 
+
+```
+def show
+@pet = Pet.find_by(id: params[:id])
+if @pet
+render json: @pet
+else 
+render status: 404, nothing: true
+end
+end
+```
+
+
+
+
+
+
+
+
+
+
+
+
